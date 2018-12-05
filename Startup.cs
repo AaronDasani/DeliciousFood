@@ -24,7 +24,7 @@ namespace CRUDelicious
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {  
-            services.AddDbContext<DishContext>(options=>options.UseMySQL(Configuration["DBInfo:ConnectionString"]));
+            services.AddDbContext<DishContext>(options=>options.UseMySql(Configuration["DBInfo:ConnectionString"]));
             
             services.AddSession();
             services.AddMvc();

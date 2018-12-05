@@ -49,7 +49,7 @@ using CRUDelicious.Models;
             WriteLiteral("<!DOCTYPE html>\n<html lang=\"en\">\n");
             EndContext();
             BeginContext(33, 389, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7259d12ca8ef472a805b38a49f111005", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "58706b6192bc43c99249e36a37aecc24", async() => {
                 BeginContext(39, 376, true);
                 WriteLiteral(@"
     <meta charset=""UTF-8"">
@@ -74,7 +74,7 @@ using CRUDelicious.Models;
             WriteLiteral("\n");
             EndContext();
             BeginContext(423, 80, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cb35335a80274d74ac28836c267790a3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "21b5d9756a164467ab1ebcd2a285a430", async() => {
                 BeginContext(429, 42, true);
                 WriteLiteral("\n    <div class=\"container mt-5\">\n        ");
                 EndContext();

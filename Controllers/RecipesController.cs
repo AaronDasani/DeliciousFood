@@ -19,7 +19,7 @@ namespace CRUDelicious.Models
 
         public IActionResult index()
         {
-            var allDishes=dbContext.Dishes.ToList();
+            var allDishes=dbContext.Dishes.OrderByDescending(thedish=>thedish.created_at).ToList();
             return View("index",allDishes);
         }
 
@@ -33,6 +33,7 @@ namespace CRUDelicious.Models
         public IActionResult EditDish(Int32 dish_id)
         {
             var dishModel=dbContext.Dishes.FirstOrDefault(dish=>dish.dish_id==dish_id);
+            dbContext.SaveChanges();
             return View("edit",dishModel);
         }
 
@@ -68,6 +69,7 @@ namespace CRUDelicious.Models
             if (ModelState.IsValid)
             {
                 dbContext.Dishes.Add(dish);
+                dbContext.SaveChanges();
                 return RedirectToAction("newDish");
             }
             return View("newDish");
@@ -79,14 +81,18 @@ namespace CRUDelicious.Models
         {
             if (ModelState.IsValid)
             {
-                var retrieveDish=dbContext.Dishes.FirstOrDefault(thedish=>thedish.dish_id==dish.dish_id);
-                retrieveDish=dish;
+                Dish retrieveDish=dbContext.Dishes.FirstOrDefault(thedish=>thedish.dish_id==dish.dish_id);
+                retrieveDish.name=dish.name;
+                retrieveDish.chef=dish.chef;
+                retrieveDish.calories=dish.calories;
+                retrieveDish.description=dish.description;
+                retrieveDish.tastiness=dish.tastiness;
                 retrieveDish.updated_at=DateTime.Now;
                 dbContext.SaveChanges();
 
-                return RedirectToAction("EditDish");
+                return RedirectToAction("EditDish",new {dish_id=dish.dish_id});
             }
-            return View("edit");
+            return RedirectToAction("EditDish",new {dish_id=dish.dish_id});
         }
 
 

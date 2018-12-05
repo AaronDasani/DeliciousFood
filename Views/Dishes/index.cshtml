@@ -1,3 +1,16 @@
 
-<h3>All Dishes</h3>
-<a href="addDish" class="btn btn-warning"> Add Dish!</a>
+@model List<Dish>
+
+
+<h3 class="text-center">All Dishes</h3>
+<hr>
+<div class="text-right mb-4">
+    <a href="addDish" class="btn btn-success"> Add Dish!</a>
+</div>
+<h6 class="font-weight-light mb-5">Check out some recent Dishes:</h6>
+<ul class="list-inline ml-4">
+    @foreach(var dish in Model)
+    {
+        <li class="mb-2 font-weight-light"><a href="dish/@dish.dish_id">@dish.name</a> by @dish.chef</li>
+    }
+</ul>

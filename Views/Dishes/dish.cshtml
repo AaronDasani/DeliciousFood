@@ -1,0 +1,18 @@
+
+@model Dish
+
+
+<a href="~/home" class="btn btn-dark shadow">Home</a>
+<h2 class="font-weight-light text-center mt-4">- @Model.name -</h2>
+<h6 class="text-center font-weight-bold">@Model.chef</h6>
+<hr>
+
+<div class="mt-4">
+    <p class="font-weight-light">@Model.description</p>
+    <p class="font-weight-bold ml-2">Calories: @Model.calories</p>
+    <p class="font-weight-bold ml-2">Tastiness: @Model.tastiness</p>
+</div>
+<div class="mt-5 text-center">
+    <a href="~/delete/@Model.dish_id" class="btn btn-danger shadow mr-5">Delete</a>
+    <a href="~/edit/@Model.dish_id" class="btn btn-info shadow ml-5">Edit</a>
+</div>
